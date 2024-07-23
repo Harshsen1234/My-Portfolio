@@ -1,0 +1,115 @@
+@media (max-width: 768px) {
+    .port-folio{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        visibility: hidden;
+    }
+    .logo {
+        padding: 0px 0px 0px 5px;
+    }
+    .nav-bar{
+       width: 100%;
+       height: 60px;
+    }
+    .options-btn{
+        padding: 0px 50px 0px 0px;
+        visibility: visible;
+        font-size: 45px;
+        color: grey;
+    }
+    .herosection {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0px 0px 100px 0px;
+    }
+
+    .herotext1 {
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+
+    .icons-one, .Cv-btn {
+        margin: 10px 0;
+        justify-content: center;
+    }
+
+    .glowing-border {
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .heading-section {
+        margin-top: 50px;
+    }
+
+    .boxcart {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box, .skillsbox {
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .exptext {
+        width: 90%;
+        margin: 20px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}
+
+/* Media query for devices with a maximum width of 480px (mobile devices) */
+@media (max-width: 480px) {
+    html {
+        overflow: none;
+    }
+    /* .hero-image2{
+        visibility: visible;
+    } */
+    .options-btn {
+        font-size: 50px;
+        color: brown;
+    }
+    .nav-bar {
+        padding: 10px 15px;
+    }
+    .nav-links {
+        margin: 5px 0;
+        gap: 10px;
+    }
+    .nav-links a {
+        color: #fff;
+        margin: 0px 10px; /* Adjusted margin */
+        font-weight: 550;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s;
+    }
+    .nav-links a:hover {
+        color: #00abf0;
+    }
+    .hover-text {
+        position: absolute;
+        font-size: 0.9rem;
+        font-weight: bold;
+        width: 240px;
+        margin: 35px 0px 0px 28px;
+        text-align: center;
+        transform: translateX(-50%);
+        background-color: #16213e;
+        box-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
+        color: #fff;
+        line-height: 1.5;
+        padding: 20px 10px;
+        border-radius: 5px;
+        opacity: 0.9;
+    }
+}
