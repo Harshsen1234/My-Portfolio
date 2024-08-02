@@ -1,0 +1,59 @@
+.App {
+    text-align: center;
+    background-color: #1a1a2e;
+    color: white;
+    padding: 20px;
+  }
+  
+  .App-header {
+    margin: auto;
+    max-width: 800px;
+  }
+  
+  .profile-background {
+    background-image: url(C:\Reactjs\portfolio\portfol\src\Nri.jpeg); /* Update the path accordingly */
+    background-size: cover;
+    background-position: center;
+    width: 150px; /* Adjust size as needed */
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto; /* Centers the element */
+  }
+  
+  .text-section {
+    margin-top: 20px; /* Space between image and text */
+  }
+  
+  h1, h2 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 20px 0;
+    line-height: 1.5;
+  }
+  
+  .social-links {
+    margin: 20px 0;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    color: #00aaff;
+    text-decoration: none;
+  }
+  
+  .download-btn {
+    background-color: #00aaff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .download-btn:hover {
+    background-color: #007acc;
+  }
+  

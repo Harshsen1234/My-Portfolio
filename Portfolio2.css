@@ -1,115 +1,130 @@
+/* Styles for Tablets and Mobile Devices */
 @media (max-width: 768px) {
-    .port-folio{
+    .port-folio {
         overflow-x: hidden;
     }
-    .nav-links{
+
+    .nav-links {
         visibility: hidden;
     }
     .logo {
         padding: 0px 0px 0px 5px;
     }
-    .nav-bar{
-       width: 100%;
-       height: 60px;
+    .icons-one, .Cv-btn {
+        gap: 20px;
+        display: flex;
+        pointer-events: auto;
     }
-    .options-btn{
+
+    .nav-bar {
+        width: 100%;
+        height: 60px;
+    }
+    .options-btn {
         padding: 0px 50px 0px 0px;
         visibility: visible;
         font-size: 45px;
         color: grey;
     }
+
     .herosection {
+        display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        margin: 0px 0px 100px 0px;
+        margin: 0px 0px 40px 0px;
     }
 
-    .herotext1 {
-        text-align: center;
-        margin: 0 0 20px 0;
-    }
-
-    .icons-one, .Cv-btn {
-        margin: 10px 0;
+    .my-image {
+        width: auto;
+        height: auto;
+        display: flex;
         justify-content: center;
+        margin: 60px 0px 0px 0px;
+    }
+     .port-txt {
+        text-align: center;
+        margin: 0%;
+        font-weight: bold;
+    }
+    .herotext{
+        margin: 5px;
+    }
+    .icons-one {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
     }
 
-    .glowing-border {
-        margin-left: 0;
-        margin-bottom: 20px;
-        width: 200px;
-        height: 200px;
+    .Cv-btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
     }
 
     .heading-section {
         margin-top: 50px;
+        text-align: center;
+        font-weight: bold;
     }
 
     .boxcart {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .box, .skillsbox {
-        width: 90%;
-        margin: 20px 0;
-    }
-
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center boxes */
+        padding: 0px 20px 0px 20px;
+        }
+        
     .exptext {
         width: 90%;
         margin: 20px;
+        font-weight: bold;
+        line-height: 1.3;
     }
 
     .contact-form {
         width: 90%;
     }
+    .loader-container {
+        width: 55vw;
+        height: 55vw;
+    }
+
+    .loader {
+        border: 0px solid rgba(0, 0, 0, 0);
+        border-bottom: 8px solid #00abf0;
+        width: 54vw; 
+       height:  54vw;
+    }
 }
 
-/* Media query for devices with a maximum width of 480px (mobile devices) */
-@media (max-width: 480px) {
+@media (max-width: 300px) {
     html {
-        overflow: none;
+        overflow: auto;
     }
-    /* .hero-image2{
-        visibility: visible;
-    } */
+
     .options-btn {
         font-size: 50px;
         color: brown;
     }
+
     .nav-bar {
         padding: 10px 15px;
     }
+
     .nav-links {
         margin: 5px 0;
         gap: 10px;
     }
+
     .nav-links a {
         color: #fff;
-        margin: 0px 10px; /* Adjusted margin */
-        font-weight: 550;
+        margin: 0px 10px;
+        font-weight: bold;
         text-decoration: none;
-        position: relative;
         transition: color 0.3s;
     }
+
     .nav-links a:hover {
         color: #00abf0;
-    }
-    .hover-text {
-        position: absolute;
-        font-size: 0.9rem;
-        font-weight: bold;
-        width: 240px;
-        margin: 35px 0px 0px 28px;
-        text-align: center;
-        transform: translateX(-50%);
-        background-color: #16213e;
-        box-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
-        color: #fff;
-        line-height: 1.5;
-        padding: 20px 10px;
-        border-radius: 5px;
-        opacity: 0.9;
     }
 }
