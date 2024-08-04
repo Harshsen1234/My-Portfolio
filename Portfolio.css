@@ -71,7 +71,7 @@ body {
     font-weight: bold;
     width:200px;
     top: -80px;
-    margin: 0px 0px 0px 25px;
+    margin: 0px 0px 0px 30px;
     transform: translateX(-50%);
     text-align: center;
     background-color: #16213e;
@@ -248,17 +248,37 @@ button:hover {
     padding: 0 20px;
     text-align: center;
 }
-.box-skill{
+.box-skill {
     width: 280px;
     height: 230px;
     background-color: #16213e;
     border: 0.5px solid #00abf0;
-    box-shadow: 0 0 15px rgba(0, 170, 200, 80);
+    box-shadow: 0 0 15px rgba(0, 170, 200, 0.8);
     border-radius: 5px;
     margin-top: 60px;
     padding: 0 20px;
     text-align: center;
+    cursor: pointer;
+    transition: all 1s ease;
 }
+
+.box-skill:hover {
+    animation: bounce 0.6s ease; /* Apply bounce animation on hover */
+    box-shadow: 0 0 15px rgba(0, 170, 200, 0.8); /* Retain the shadow intensity */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Move up */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
 .icons-two {
     margin: 10px 0 0 5px;
     font-size: 36px;

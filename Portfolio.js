@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { FaTwitterSquare } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
 import { FiChrome } from "react-icons/fi";
 import { GoDatabase } from "react-icons/go";
@@ -17,10 +16,15 @@ import { MdMailOutline } from "react-icons/md";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { RiMessage2Line } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { IoHome } from "react-icons/io5";
+import { FaTelegram } from "react-icons/fa6";
+
+
 
 const Portfolio = () => {
     const [hoverText, setHoverText] = useState('');
     const [hoverPosition, setHoverPosition] = useState({ top: 0, left: 0 });
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const handleMouseEnter = (text, e) => {
         const rect = e.target.getBoundingClientRect();
@@ -32,53 +36,63 @@ const Portfolio = () => {
         setHoverText('');
     };
 
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    const ResumeDownload = () => {
+        window.location.href = 'React Icons.pdf';
+    };
+
+    const LinkedinUrl = 'https://www.linkedin.com/in/harsh-sen-47a021244/';
+    const LinkedinBtn = () => {
+        window.open(LinkedinUrl, '_blank');
+    };
+
+    const GitUrl = 'https://github.com/Harshsen1234';
+    const GItBtn = () => {
+        window.open(GitUrl, '_blank');
+    };
+
+    const Insta = 'https://www.instagram.com/harshsen__83/?igsh=YzljYTk1ODg3Zg%3D%3D';
+    const MyInsta = () => {
+        window.open(Insta, '_blank');
+    };
+    const Tele = 'https://t.me/MyteleHarsh';
+    const Mytele = () => {
+        window.open(Tele, '_blank');
+    };
+
     return (
         <>
             <div className="port-folio">
                 <nav className="nav-bar">
                     <div className="logo">
-                        <div className='ham-burger'>
+                        <div className='ham-burger' onClick={toggleMenu}>
                             <RxHamburgerMenu className="options-btn" />
                         </div>
                         <span className="logo-one">Po</span><span className="logo-two">rtfolio.</span>
                     </div>
-                    <ul className="nav-links">
-                        <li>
-                            <a className="navtxt"
-                                onMouseEnter={(e) => handleMouseEnter('Coding is truly refreshing and fulfilling, providing me with constant challenges and excitement. It motivates me to wake up every day and discover the new problems. I excel in teamwork, solving complex problems, and designing user-friendly Web applications.', e)}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a className="navtxt"
-                                onMouseEnter={(e) => handleMouseEnter('Hi, I\'m Harsh Sen, a second-year BCA student at NRI College. I\'m passionate about web design and learning new technologies. My goal is to leverage my skills in computer applications to develop innovative solutions and contribute to the tech industry.', e)}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                About me
-                            </a>
-                        </li>
-                        <li>
-                            <a className="navtxt"
-                                onMouseEnter={(e) => handleMouseEnter('As an aspiring front-end web developer, I`m here to bring your online vision to life with a range of services tailored to your needs. From crafting responsive and visually captivating web designs to ensuring seamless user experiences across all devices, I specialize in elevating your online presence.', e)}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a className="navtxt"
-                                onMouseEnter={(e) => handleMouseEnter('I have skills in creating modern, user-friendly websites. I`m proficient in HTML and CSS for crafting structured, appealing layouts. My JavaScript knowledge adds interactivity and dynamic content to enhance user engagement. With React, I build efficient, scalable web applications.', e)}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                Skills
-                            </a>
-                        </li>
+                    <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+                        <li><a href='home' className="navtxt" onMouseEnter={(e) => handleMouseEnter('Coding is truly refreshing and fulfilling, providing me with constant challenges and excitement. It motivates me to wake up every day and discover the new problems. I excel in teamwork, solving complex problems, and designing user-friendly Web applications.', e)} onMouseLeave={handleMouseLeave}>Home</a></li>
+                        <li><a href='about' className="navtxt" onMouseEnter={(e) => handleMouseEnter('Hi, I\'m Harsh Sen, a second-year BCA student at NRI College. I\'m passionate about web design and learning new technologies. My goal is to leverage my skills in computer applications to develop innovative solutions and contribute to the tech industry.', e)} onMouseLeave={handleMouseLeave}>About me</a></li>
+                        <li><a href='services' className="navtxt" onMouseEnter={(e) => handleMouseEnter('As an aspiring front-end web developer, I`m here to bring your online vision to life with a range of services tailored to your needs. From crafting responsive and visually captivating web designs to ensuring seamless user experiences across all devices, I specialize in elevating your online presence.', e)} onMouseLeave={handleMouseLeave}>Services</a></li>
+                        <li><a href='skills' className="navtxt" onMouseEnter={(e) => handleMouseEnter('I have skills in creating modern, user-friendly websites. I`m proficient in HTML and CSS for crafting structured, appealing layouts. My JavaScript knowledge adds interactivity and dynamic content to enhance user engagement. With React, I build efficient, scalable web applications.', e)} onMouseLeave={handleMouseLeave}>Skills</a></li>
                     </ul>
                     {hoverText && <div className="hover-text" style={{ top: hoverPosition.top, left: hoverPosition.left }}>{hoverText}</div>}
                 </nav>
 
+                {/* Mobile Menu */}
+                {menuOpen && (
+                    <div className="mobile-menu">
+                        <ul>
+                            <li><a href='home' onClick={() => setMenuOpen(false)}><button id='btn-home'><IoHome  className='home-ic'/>Home</button></a></li>
+                            <li><a id='btn-head' href='about' onClick={() => setMenuOpen(false)}>About me<p className='btn-text'>Hi, I'm Harsh Sen, a second-year BCA student at NRI College. I\'m passionate about web design and learning new technologies. My goal is to leverage my skills in computer applications to develop innovative solutions and contribute to the tech industry.</p></a></li>
+                            <li><a id='btn-head' href='services' onClick={() => setMenuOpen(false)}>Services<p className='btn-text'>As an aspiring front-end web developer, I`m here to bring your online vision to life with a range of services tailored to your needs. From crafting responsive and visually captivating web designs to ensuring seamless user experiences across all devices, I specialize in elevating your online presence.</p></a></li>
+                            <li><a id='btn-head' href='skills' onClick={() => setMenuOpen(false)}>Skills<p className='btn-text'>I have skills in creating modern, user-friendly websites. I`m proficient in HTML and CSS for crafting structured, appealing layouts. My JavaScript knowledge adds interactivity and dynamic content to enhance user engagement. With React, I build efficient, scalable web applications.</p></a></li>
+                        </ul>
+                    </div>
+                )}
                 {/* Hero section */}
                 <div className="newdiv">
                     <div className="herosection">
@@ -92,16 +106,16 @@ const Portfolio = () => {
                                 <h1>Hello!  I'm Harsh Sen</h1>
                                 <h2 className='profile-text1'>And i'm</h2>  
                                 <h2 className='profile-text2'> Web designer</h2>
-                                <p className='herotext'>I am an aspiring web developer with a deep passion for technology and a strong drive to bring ideas to life through code. My journey began with a fascination for creating digital experiences and a desire to turn creative concepts into functional websites and applications. While I am at the beginning of my professional career, I have diligently built a solid foundation in various programming languages and frameworks. I am committed to continually learning and adapting to the ever-evolving tech landscape.In addition to technical skills,</p>
+                                <p className='herotext'>I am an aspiring web developer with a deep passion for technology and a strong drive to bring ideas to life through code. My journey began with a fascination for creating digital experiences and a desire to turn creative concepts into functional websites and applications. While I am at the beginning of my professional career, I have diligently built a solid foundation in various programming languages and frameworks. I am committed to continually learning and adapting to the ever-evolving tech landscape.In addition to technical skills.</p>
                             </div>
                             <div className="icons-one">
-                                <FaLinkedin />
-                                <FaInstagram />
-                                <FaGithub />
-                                <FaTwitterSquare />
+                            <FaLinkedin onClick={LinkedinBtn}/>
+                                <FaInstagram onClick={MyInsta}/>
+                                <FaGithub onClick={GItBtn} />
+                                <FaTelegram  onClick={Mytele} />
                             </div>
                             <div className="Cv-btn">
-                                <button className='btnSuccess' hreff='Resume.pdf' download="Icons.pdf">Get Cv</button>
+                          <button onClick={ResumeDownload}>Get Cv</button>
                             </div>
                         </div>
                     </div> 
@@ -153,6 +167,7 @@ const Portfolio = () => {
                 </div>
              </div>
          </div>
+              <div className="service-section">
               <div className="heading-section">
                         <h1 className='section-one'> My </h1>  
                         <h1 className='section-two'> Services </h1>   
@@ -183,6 +198,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                     </div>
+              </div>
                     <div className="heading-section">
                         <h1 className='section-one'> Experien</h1>  
                         <h1 className='section-two'>ce</h1>   
